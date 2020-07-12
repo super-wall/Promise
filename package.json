@@ -1,0 +1,23 @@
+{
+  "name": "promise",
+  "version": "1.0.0",
+  "description": "🤯实现Promise，遵循[Promise/A+规范](https://www.ituring.com.cn/article/66566)",
+  "main": "index.js",
+  "scripts": {
+    "test": "promises-aplus-tests ./index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/super-wall/Promise.git"
+  },
+  "keywords": [],
+  "author": "lihaozecq <lihaozecq@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/super-wall/Promise/issues"
+  },
+  "homepage": "https://github.com/super-wall/Promise#readme",
+  "dependencies": {
+    "promises-aplus-tests": "^2.1.2"
+  }
+}
