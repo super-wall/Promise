@@ -107,7 +107,7 @@ Promise.prototype.then = function (onFulfilled, onRejected) {
       setTimeout(() => {
         try {
           var x = onFulfilled(this._result);
-          this._resolvePromise(promise, x, resolve, reject);
+          resolvePromise(promise, x, resolve, reject);
         } catch (e) {
           return reject(e);
         }
