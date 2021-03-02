@@ -47,7 +47,7 @@ Promise.prototype._reject = function (reason) {
 
 function resolvePromise(promise, x, resolve, reject) {
   // 如果 promise 和 x 指向同一对象，以 TypeError 为据因拒绝执行 promise
-  if (x === promise) {
+  if (promise && x === promise) {
     return reject(new TypeError('Chaining cycle detected for promise!'));
   }
   // 用于 “优先采用首次调用并忽略剩下的调用”的标志位
@@ -174,10 +174,10 @@ Promise.prototype.finally = function (callback) {
  * 将现有对象转为成功的Promise对象
  */
 Promise.resolve = function (value) {
-  let promise;
-  return (promise = new Promise((resolve, reject) => {
-    resolvePromise(promise, value, resolve, reject);
-  }));
+  if (value instanceof Promise) {
+    return value;
+  }
+  return new Promise(resolve => resolve(value));
 };
 
 /**
